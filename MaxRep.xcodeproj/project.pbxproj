@@ -7,13 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10641F67C90A660777DD0BC5 /* Pods_MaxRepUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F091F7BB42D1A080EC8CDDDF /* Pods_MaxRepUITests.framework */; };
+		7A01E24196B8488742956A92 /* Pods_MaxRep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094D470271F857B8621D86A7 /* Pods_MaxRep.framework */; };
+		941AE98A1D40086400263AB6 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE9891D40086400263AB6 /* UnwindSegue.swift */; };
+		941AE98C1D4048BE00263AB6 /* PreWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE98B1D4048BE00263AB6 /* PreWorkoutCell.swift */; };
 		945F29061D2C67E4007F7932 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29051D2C67E4007F7932 /* AppDelegate.swift */; };
-		945F29081D2C67E4007F7932 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29071D2C67E4007F7932 /* ViewController.swift */; };
-		945F290B1D2C67E4007F7932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945F29091D2C67E4007F7932 /* Main.storyboard */; };
 		945F290D1D2C67E4007F7932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 945F290C1D2C67E4007F7932 /* Assets.xcassets */; };
 		945F29101D2C67E4007F7932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945F290E1D2C67E4007F7932 /* LaunchScreen.storyboard */; };
-		945F291B1D2C67E4007F7932 /* MaxRepTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F291A1D2C67E4007F7932 /* MaxRepTests.swift */; };
 		945F29261D2C67E4007F7932 /* MaxRepUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29251D2C67E4007F7932 /* MaxRepUITests.swift */; };
+		945F29351D2C694C007F7932 /* SwiftyTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29341D2C694C007F7932 /* SwiftyTimer.swift */; };
+		945F29371D2C6953007F7932 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29361D2C6953007F7932 /* Workout.swift */; };
+		945F29391D2C6959007F7932 /* MPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29381D2C6959007F7932 /* MPError.swift */; };
+		945F293B1D2C695E007F7932 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F293A1D2C695E007F7932 /* Exercise.swift */; };
+		945F293D1D2C696C007F7932 /* TaskTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F293C1D2C696C007F7932 /* TaskTimer.swift */; };
+		945F293F1D2C6974007F7932 /* SpeechSynthesizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F293E1D2C6974007F7932 /* SpeechSynthesizer.swift */; };
+		945F29421D2C69CE007F7932 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945F29411D2C69CE007F7932 /* Main.storyboard */; };
+		945F29441D2C69DF007F7932 /* PreWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29431D2C69DF007F7932 /* PreWorkoutViewController.swift */; };
+		945F29461D2C69E9007F7932 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29451D2C69E9007F7932 /* AddViewController.swift */; };
+		945F29481D2C69F3007F7932 /* AppendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29471D2C69F3007F7932 /* AppendViewController.swift */; };
+		945F294A1D2C69F7007F7932 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29491D2C69F7007F7932 /* HomeViewController.swift */; };
+		945F294C1D2C6A00007F7932 /* InWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F294B1D2C6A00007F7932 /* InWorkoutViewController.swift */; };
+		945F294F1D2C6A28007F7932 /* WorkoutSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F294E1D2C6A28007F7932 /* WorkoutSelectionCell.swift */; };
+		946030221D2C836000833E15 /* MPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946030211D2C836000833E15 /* MPService.swift */; };
+		946608D11D4BE23900268DD8 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946608D01D4BE23900268DD8 /* Queue.swift */; };
+		9484810D1D2C937000A8CCF5 /* WorkoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484810C1D2C937000A8CCF5 /* WorkoutSpec.swift */; };
+		9484810F1D2D750300A8CCF5 /* AutoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484810E1D2D750300A8CCF5 /* AutoUpdate.swift */; };
+		948481111D304F9A00A8CCF5 /* PushSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948481101D304F9A00A8CCF5 /* PushSegue.swift */; };
+		948481151D31E95500A8CCF5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948481141D31E95500A8CCF5 /* HomeView.swift */; };
+		948481191D34341100A8CCF5 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948481181D34341100A8CCF5 /* Routine.swift */; };
+		9484811B1D3492B900A8CCF5 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484811A1D3492B900A8CCF5 /* HeaderCell.swift */; };
+		EC0FA0FB307C8A4ED664AF16 /* Pods_MaxRepTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71936A0EE2C56B127B1DFE3 /* Pods_MaxRepTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +57,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		094D470271F857B8621D86A7 /* Pods_MaxRep.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaxRep.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		126DD4703C21318C76523045 /* Pods-MaxRepUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRepUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRepUITests/Pods-MaxRepUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2FAAEB8AA091A43AE25915B6 /* Pods-MaxRepUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRepUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRepUITests/Pods-MaxRepUITests.release.xcconfig"; sourceTree = "<group>"; };
+		380DB34AE085B58E4C6DBCAE /* Pods-MaxRepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRepTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRepTests/Pods-MaxRepTests.release.xcconfig"; sourceTree = "<group>"; };
+		9334672BF83679A222FBB788 /* Pods-MaxRep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRep.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRep/Pods-MaxRep.debug.xcconfig"; sourceTree = "<group>"; };
+		941AE9891D40086400263AB6 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		941AE98B1D4048BE00263AB6 /* PreWorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreWorkoutCell.swift; sourceTree = "<group>"; };
 		945F29021D2C67E4007F7932 /* MaxRep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaxRep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945F29051D2C67E4007F7932 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		945F29071D2C67E4007F7932 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		945F290A1D2C67E4007F7932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		945F290C1D2C67E4007F7932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		945F290F1D2C67E4007F7932 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		945F29111D2C67E4007F7932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945F29161D2C67E4007F7932 /* MaxRepTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaxRepTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		945F291A1D2C67E4007F7932 /* MaxRepTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxRepTests.swift; sourceTree = "<group>"; };
 		945F291C1D2C67E4007F7932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		945F29211D2C67E4007F7932 /* MaxRepUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaxRepUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		945F29251D2C67E4007F7932 /* MaxRepUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxRepUITests.swift; sourceTree = "<group>"; };
 		945F29271D2C67E4007F7932 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		945F29341D2C694C007F7932 /* SwiftyTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyTimer.swift; sourceTree = "<group>"; };
+		945F29361D2C6953007F7932 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		945F29381D2C6959007F7932 /* MPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPError.swift; sourceTree = "<group>"; };
+		945F293A1D2C695E007F7932 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		945F293C1D2C696C007F7932 /* TaskTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskTimer.swift; sourceTree = "<group>"; };
+		945F293E1D2C6974007F7932 /* SpeechSynthesizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeechSynthesizer.swift; sourceTree = "<group>"; };
+		945F29411D2C69CE007F7932 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		945F29431D2C69DF007F7932 /* PreWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreWorkoutViewController.swift; sourceTree = "<group>"; };
+		945F29451D2C69E9007F7932 /* AddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		945F29471D2C69F3007F7932 /* AppendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppendViewController.swift; sourceTree = "<group>"; };
+		945F29491D2C69F7007F7932 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		945F294B1D2C6A00007F7932 /* InWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InWorkoutViewController.swift; sourceTree = "<group>"; };
+		945F294E1D2C6A28007F7932 /* WorkoutSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSelectionCell.swift; sourceTree = "<group>"; };
+		946030211D2C836000833E15 /* MPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPService.swift; sourceTree = "<group>"; };
+		946608D01D4BE23900268DD8 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		9484810C1D2C937000A8CCF5 /* WorkoutSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSpec.swift; sourceTree = "<group>"; };
+		9484810E1D2D750300A8CCF5 /* AutoUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoUpdate.swift; sourceTree = "<group>"; };
+		948481101D304F9A00A8CCF5 /* PushSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushSegue.swift; sourceTree = "<group>"; };
+		948481141D31E95500A8CCF5 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		948481181D34341100A8CCF5 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		9484811A1D3492B900A8CCF5 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		9C39C9C579452EFB2EDF3ADE /* Pods-MaxRepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRepTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRepTests/Pods-MaxRepTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B71936A0EE2C56B127B1DFE3 /* Pods_MaxRepTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaxRepTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8BCE8658D40A6484C913CAC /* Pods-MaxRep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRep.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRep/Pods-MaxRep.release.xcconfig"; sourceTree = "<group>"; };
+		F091F7BB42D1A080EC8CDDDF /* Pods_MaxRepUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaxRepUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A01E24196B8488742956A92 /* Pods_MaxRep.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC0FA0FB307C8A4ED664AF16 /* Pods_MaxRepTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10641F67C90A660777DD0BC5 /* Pods_MaxRepUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +136,8 @@
 				945F29191D2C67E4007F7932 /* MaxRepTests */,
 				945F29241D2C67E4007F7932 /* MaxRepUITests */,
 				945F29031D2C67E4007F7932 /* Products */,
+				A4D2373445B23103720A6812 /* Pods */,
+				D5D0E4872A7F9C2C190EA503 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				945F29051D2C67E4007F7932 /* AppDelegate.swift */,
-				945F29071D2C67E4007F7932 /* ViewController.swift */,
-				945F29091D2C67E4007F7932 /* Main.storyboard */,
+				945F29411D2C69CE007F7932 /* Main.storyboard */,
+				945F294D1D2C6A10007F7932 /* View */,
+				945F29401D2C69A0007F7932 /* Controllers */,
+				945F29331D2C693D007F7932 /* Model */,
 				945F290C1D2C67E4007F7932 /* Assets.xcassets */,
 				945F290E1D2C67E4007F7932 /* LaunchScreen.storyboard */,
 				945F29111D2C67E4007F7932 /* Info.plist */,
@@ -110,7 +169,8 @@
 		945F29191D2C67E4007F7932 /* MaxRepTests */ = {
 			isa = PBXGroup;
 			children = (
-				945F291A1D2C67E4007F7932 /* MaxRepTests.swift */,
+				9484810C1D2C937000A8CCF5 /* WorkoutSpec.swift */,
+				9484810E1D2D750300A8CCF5 /* AutoUpdate.swift */,
 				945F291C1D2C67E4007F7932 /* Info.plist */,
 			);
 			path = MaxRepTests;
@@ -125,6 +185,70 @@
 			path = MaxRepUITests;
 			sourceTree = "<group>";
 		};
+		945F29331D2C693D007F7932 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				945F29361D2C6953007F7932 /* Workout.swift */,
+				945F293C1D2C696C007F7932 /* TaskTimer.swift */,
+				946608D01D4BE23900268DD8 /* Queue.swift */,
+				946030211D2C836000833E15 /* MPService.swift */,
+				948481181D34341100A8CCF5 /* Routine.swift */,
+				945F293E1D2C6974007F7932 /* SpeechSynthesizer.swift */,
+				945F29381D2C6959007F7932 /* MPError.swift */,
+				945F293A1D2C695E007F7932 /* Exercise.swift */,
+				945F29341D2C694C007F7932 /* SwiftyTimer.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		945F29401D2C69A0007F7932 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				945F29491D2C69F7007F7932 /* HomeViewController.swift */,
+				945F29431D2C69DF007F7932 /* PreWorkoutViewController.swift */,
+				945F29451D2C69E9007F7932 /* AddViewController.swift */,
+				945F294B1D2C6A00007F7932 /* InWorkoutViewController.swift */,
+				945F29471D2C69F3007F7932 /* AppendViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		945F294D1D2C6A10007F7932 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				948481141D31E95500A8CCF5 /* HomeView.swift */,
+				945F294E1D2C6A28007F7932 /* WorkoutSelectionCell.swift */,
+				941AE98B1D4048BE00263AB6 /* PreWorkoutCell.swift */,
+				9484811A1D3492B900A8CCF5 /* HeaderCell.swift */,
+				948481101D304F9A00A8CCF5 /* PushSegue.swift */,
+				941AE9891D40086400263AB6 /* UnwindSegue.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		A4D2373445B23103720A6812 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C39C9C579452EFB2EDF3ADE /* Pods-MaxRepTests.debug.xcconfig */,
+				380DB34AE085B58E4C6DBCAE /* Pods-MaxRepTests.release.xcconfig */,
+				126DD4703C21318C76523045 /* Pods-MaxRepUITests.debug.xcconfig */,
+				2FAAEB8AA091A43AE25915B6 /* Pods-MaxRepUITests.release.xcconfig */,
+				9334672BF83679A222FBB788 /* Pods-MaxRep.debug.xcconfig */,
+				D8BCE8658D40A6484C913CAC /* Pods-MaxRep.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D5D0E4872A7F9C2C190EA503 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B71936A0EE2C56B127B1DFE3 /* Pods_MaxRepTests.framework */,
+				F091F7BB42D1A080EC8CDDDF /* Pods_MaxRepUITests.framework */,
+				094D470271F857B8621D86A7 /* Pods_MaxRep.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +256,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 945F292A1D2C67E4007F7932 /* Build configuration list for PBXNativeTarget "MaxRep" */;
 			buildPhases = (
+				10AD578F2C3655C907785620 /* [CP] Check Pods Manifest.lock */,
 				945F28FE1D2C67E4007F7932 /* Sources */,
 				945F28FF1D2C67E4007F7932 /* Frameworks */,
 				945F29001D2C67E4007F7932 /* Resources */,
+				9B754410CBF8258B6585E2AC /* [CP] Embed Pods Frameworks */,
+				73CFC5D6DBC2F2D79E2211D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +276,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 945F292D1D2C67E4007F7932 /* Build configuration list for PBXNativeTarget "MaxRepTests" */;
 			buildPhases = (
+				2AED5EF15B0D7660C264DB8B /* [CP] Check Pods Manifest.lock */,
 				945F29121D2C67E4007F7932 /* Sources */,
 				945F29131D2C67E4007F7932 /* Frameworks */,
 				945F29141D2C67E4007F7932 /* Resources */,
+				5A543A5360EF73E04E8CF686 /* [CP] Embed Pods Frameworks */,
+				9F61D7128C6020C60FCD64F9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +297,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 945F29301D2C67E4007F7932 /* Build configuration list for PBXNativeTarget "MaxRepUITests" */;
 			buildPhases = (
+				156C9DE62F69395E583B0350 /* [CP] Check Pods Manifest.lock */,
 				945F291D1D2C67E4007F7932 /* Sources */,
 				945F291E1D2C67E4007F7932 /* Frameworks */,
 				945F291F1D2C67E4007F7932 /* Resources */,
+				5EA77C191F175EFE13E89A2A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -229,9 +361,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				945F29421D2C69CE007F7932 /* Main.storyboard in Resources */,
 				945F29101D2C67E4007F7932 /* LaunchScreen.storyboard in Resources */,
 				945F290D1D2C67E4007F7932 /* Assets.xcassets in Resources */,
-				945F290B1D2C67E4007F7932 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,13 +383,155 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10AD578F2C3655C907785620 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		156C9DE62F69395E583B0350 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2AED5EF15B0D7660C264DB8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5A543A5360EF73E04E8CF686 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaxRepTests/Pods-MaxRepTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5EA77C191F175EFE13E89A2A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaxRepUITests/Pods-MaxRepUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73CFC5D6DBC2F2D79E2211D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaxRep/Pods-MaxRep-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B754410CBF8258B6585E2AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaxRep/Pods-MaxRep-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9F61D7128C6020C60FCD64F9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MaxRepTests/Pods-MaxRepTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		945F28FE1D2C67E4007F7932 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				945F29081D2C67E4007F7932 /* ViewController.swift in Sources */,
+				945F29461D2C69E9007F7932 /* AddViewController.swift in Sources */,
+				946608D11D4BE23900268DD8 /* Queue.swift in Sources */,
+				945F29351D2C694C007F7932 /* SwiftyTimer.swift in Sources */,
+				945F29481D2C69F3007F7932 /* AppendViewController.swift in Sources */,
+				948481191D34341100A8CCF5 /* Routine.swift in Sources */,
+				9484811B1D3492B900A8CCF5 /* HeaderCell.swift in Sources */,
+				945F294F1D2C6A28007F7932 /* WorkoutSelectionCell.swift in Sources */,
+				945F293F1D2C6974007F7932 /* SpeechSynthesizer.swift in Sources */,
 				945F29061D2C67E4007F7932 /* AppDelegate.swift in Sources */,
+				945F29441D2C69DF007F7932 /* PreWorkoutViewController.swift in Sources */,
+				941AE98C1D4048BE00263AB6 /* PreWorkoutCell.swift in Sources */,
+				945F29391D2C6959007F7932 /* MPError.swift in Sources */,
+				945F293D1D2C696C007F7932 /* TaskTimer.swift in Sources */,
+				945F294C1D2C6A00007F7932 /* InWorkoutViewController.swift in Sources */,
+				941AE98A1D40086400263AB6 /* UnwindSegue.swift in Sources */,
+				946030221D2C836000833E15 /* MPService.swift in Sources */,
+				945F29371D2C6953007F7932 /* Workout.swift in Sources */,
+				948481111D304F9A00A8CCF5 /* PushSegue.swift in Sources */,
+				948481151D31E95500A8CCF5 /* HomeView.swift in Sources */,
+				945F293B1D2C695E007F7932 /* Exercise.swift in Sources */,
+				945F294A1D2C69F7007F7932 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +539,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				945F291B1D2C67E4007F7932 /* MaxRepTests.swift in Sources */,
+				9484810D1D2C937000A8CCF5 /* WorkoutSpec.swift in Sources */,
+				9484810F1D2D750300A8CCF5 /* AutoUpdate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,14 +568,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		945F29091D2C67E4007F7932 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				945F290A1D2C67E4007F7932 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		945F290E1D2C67E4007F7932 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -333,6 +600,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -379,6 +647,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -399,6 +668,7 @@
 		};
 		945F292B1D2C67E4007F7932 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9334672BF83679A222FBB788 /* Pods-MaxRep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MaxRep/Info.plist;
@@ -410,6 +680,7 @@
 		};
 		945F292C1D2C67E4007F7932 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8BCE8658D40A6484C913CAC /* Pods-MaxRep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MaxRep/Info.plist;
@@ -421,6 +692,7 @@
 		};
 		945F292E1D2C67E4007F7932 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C39C9C579452EFB2EDF3ADE /* Pods-MaxRepTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MaxRepTests/Info.plist;
@@ -433,6 +705,7 @@
 		};
 		945F292F1D2C67E4007F7932 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 380DB34AE085B58E4C6DBCAE /* Pods-MaxRepTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = MaxRepTests/Info.plist;
@@ -445,6 +718,7 @@
 		};
 		945F29311D2C67E4007F7932 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 126DD4703C21318C76523045 /* Pods-MaxRepUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MaxRepUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -456,6 +730,7 @@
 		};
 		945F29321D2C67E4007F7932 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FAAEB8AA091A43AE25915B6 /* Pods-MaxRepUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = MaxRepUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -484,6 +759,7 @@
 				945F292C1D2C67E4007F7932 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		945F292D1D2C67E4007F7932 /* Build configuration list for PBXNativeTarget "MaxRepTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +768,7 @@
 				945F292F1D2C67E4007F7932 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		945F29301D2C67E4007F7932 /* Build configuration list for PBXNativeTarget "MaxRepUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +777,7 @@
 				945F29321D2C67E4007F7932 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

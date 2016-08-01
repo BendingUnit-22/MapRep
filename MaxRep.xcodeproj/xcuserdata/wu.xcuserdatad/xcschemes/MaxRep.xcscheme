@@ -37,6 +37,20 @@
                BlueprintName = "MaxRepTests"
                ReferencedContainer = "container:MaxRep.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "WorkoutSpec/Test_MPService_fetchAllWorkout__There_should_be_no_workou_log_thus_far__Expects_0()">
+               </Test>
+               <Test
+                  Identifier = "WorkoutSpec/_fetchAllWorkout__Inital_fetch__should_result_in_0_entry()">
+               </Test>
+               <Test
+                  Identifier = "WorkoutSpec/_fetchAllWorkout____Expects_0()">
+               </Test>
+               <Test
+                  Identifier = "WorkoutSpec/should_be_empty()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">
