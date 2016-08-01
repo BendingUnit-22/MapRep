@@ -6,15 +6,19 @@
 //  Copyright © 2016 Rixing Wu. All rights reserved.
 //
 
+
+// cloned in Desktop
+
+
 import UIKit
 import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
 
-
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         application.statusBarStyle = UIStatusBarStyle.LightContent
         return true
