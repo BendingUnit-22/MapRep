@@ -7,9 +7,6 @@
 //
 
 
-// cloned in Desktop
-
-
 import UIKit
 import ChameleonFramework
 
