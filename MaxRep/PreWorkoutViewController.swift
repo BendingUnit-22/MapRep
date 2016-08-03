@@ -4,10 +4,16 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class PreWorkoutViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var workout: Workout!
+    var navController : UINavigationController?
+    var headerView: HeaderCell!
+    var globalTime : Double = 0.0
+    var controlBtn : UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.automaticallyAdjustsScrollViewInsets = false
@@ -21,7 +27,18 @@ class PreWorkoutViewController: UIViewController {
     }
     
     func swipeDown() {
-        self.performSegueWithIdentifier("segueUnwind", sender: self)
+        if navController != nil{
+            confirmQuit()
+        }else{
+            self.performSegueWithIdentifier("segueUnwind", sender: self)
+        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if let btn = controlBtn{
+            btn.setTitle("Resume", forState: .Normal)
+            btn.backgroundColor = UIColor.flatRedColor()
+        }
     }
 }
 
@@ -31,7 +48,15 @@ class PreWorkoutViewController: UIViewController {
 extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
     
     @IBAction func startWorkout(sender: AnyObject) {
-        self.performSegueWithIdentifier("toInWorkout", sender: self)
+        
+        if navController == nil{
+            self.performSegueWithIdentifier("toInWorkout", sender: self)
+            startTimer(workout.workoutDuration())
+            controlBtn = sender as? UIButton
+        }else{
+            self.presentViewController(navController!, animated: true, completion: nil)
+        }
+
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -57,7 +82,9 @@ extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
         let type = "\(wkt.routine!.type)"
         cell.title.text = wkt.name
         cell.type.text = type
-        return tableView.dequeueReusableCellWithIdentifier("header")! as UIView
+        cell.duration.text = wkt.workoutDuration().timeFormat
+        self.headerView = cell
+        return cell
         
     }
     
@@ -74,6 +101,30 @@ extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
         return 150
     }
     
+    
+    private func startTimer(duration: Double){
+        headerView.durationLabel.text = "time"
+        
+        let timer = NSTimer.new(every: 1.0) {
+            self.headerView.duration.text = self.globalTime.timeFormat
+            self.globalTime += 1.0
+        }
+        timer.start()
+        
+    }
+    
+    
+    private func confirmQuit(){
+        let alertController = UIAlertController(title: "Attempt to quit", message: "All your progess will be lost!", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "Ok", style: .Destructive) { (alert) in
+            self.performSegueWithIdentifier("segueUnwind", sender: self)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
 }
 
 // MARK: Segues
@@ -83,7 +134,9 @@ extension PreWorkoutViewController{
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toInWorkout"{
-            let wkVC = segue.destinationViewController.childViewControllers[0] as! InWorkoutViewController
+            let nav = segue.destinationViewController as! UINavigationController
+            navController = nav
+            let wkVC = navController!.childViewControllers[0] as! InWorkoutViewController
             wkVC.workout = self.workout
         }
     }

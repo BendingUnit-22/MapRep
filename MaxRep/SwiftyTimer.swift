@@ -128,4 +128,31 @@ extension Double {
     
     public var day: NSTimeInterval          { return self * 3600 * 24 }
     public var days: NSTimeInterval         { return self * 3600 * 24 }
+    
+    public var timeFormat: String {
+        let hours = Int(self) / 3600
+        let minutes = Int(self) / 60 % 60
+        let seconds = Int(self) % 60
+        if hours < 1{
+            return String(format:"%02i:%02i", minutes, seconds)
+        }
+        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

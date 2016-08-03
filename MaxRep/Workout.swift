@@ -15,7 +15,6 @@ class Workout : Object{
     dynamic var createdAt = NSDate()
     dynamic var routine : Routine?
     var exercises = List<Exercise>()
-    
     func append(execise: Exercise) throws{
         guard !execise.name.isEmpty else{
             throw MPError.EmptyEntry
@@ -46,6 +45,26 @@ class Workout : Object{
             throw MPError.EmptyArray
         }
         
+    }
+    
+    // classic d = ((count * interval) + low) * rounds
+    //endurance = count * (rounds * (interval + low))
+    // tabata = count * (rounds * (interval + low))
+    
+    func workoutDuration() -> Double {
+        let route = self.routine!
+        let count = Double(exercises.count)
+        let interval = route.interval
+        let low = route.intervalLow
+        let rounds = Double(route.rounds)
+        switch route.type {
+        case .Classic:
+            return (count * interval + low) * rounds
+        case .Endurance:
+            return count * (rounds * (interval + low))
+        case .Tabata:
+            return count * (rounds * (interval + low))
+        }
     }
     
 }

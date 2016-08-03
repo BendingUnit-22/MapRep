@@ -70,7 +70,7 @@ extension MPService{
         
         let tababta = ["Standard Push-Ups", "Knee to Elbow Push Ups", "Push-Ups","Dips", "Arm Circles", "Diamond Push-Ups", "Lunges (Right)", "Lunges (Left)", "Calf Raise",  "Wall Squats"]
         
-        createWorkout("High Intensity Interval Training", type: .Classic, r: 3, int: 45.0.seconds, low: 1.0.minute, list: classic)
+        createWorkout("High Intensity Interval Training", type: .Classic, r: 3, int: 50.0.seconds, low: 2.0.minute, list: classic)
         createWorkout("Strength Training", type: .Tabata, r: 6, int: 20.0.seconds, low: 10.0.seconds, list: tababta)
         createWorkout("Cardio Training", type: .Endurance, r: 15, int:1.0.minute, low: 1.0.minute, list: endurance)
         

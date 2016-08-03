@@ -16,5 +16,5 @@ class HeaderCell: UITableViewCell {
     
     @IBOutlet weak var type: UILabel!
     @IBOutlet weak var duration: UILabel!
-    
+    @IBOutlet weak var durationLabel: UILabel!
 }

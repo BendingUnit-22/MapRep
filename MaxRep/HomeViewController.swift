@@ -39,10 +39,13 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        let cell =  tableView.dequeueReusableCellWithIdentifier("workoutcell") as! WorkoutSelectionCell
         let wkt = workouts[indexPath.row]
-        let type = "\(wkt.routine!.type)"
+        let route = wkt.routine!
+        let type = "\(route.type)"
         cell.imgView.image =  UIImage(named: type)
         cell.title.text = wkt.name
         cell.type.text = type
+        cell.routine.text = "\(wkt.exercises.count) x \(route.rounds)"
+        cell.duration.text = wkt.workoutDuration().timeFormat
         return cell
     }
     

@@ -20,6 +20,8 @@ class InWorkoutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(workout.name)
+        
     }
     
   
