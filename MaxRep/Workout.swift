@@ -10,15 +10,23 @@ import Foundation
 import RealmSwift
 
 
+
 class Workout : Object{
     dynamic var name = ""
     dynamic var createdAt = NSDate()
     dynamic var routine : Routine?
+    
+    var restBetweenSets = 2.0.minutes
+    
     var exercises = List<Exercise>()
+    
+    var delegate : InWorkoutDelegate?
+    
     func append(execise: Exercise) throws{
         guard !execise.name.isEmpty else{
             throw MPError.EmptyEntry
         }
+        
         exercises.append(execise)
     }
     
@@ -47,9 +55,6 @@ class Workout : Object{
         
     }
     
-    // classic d = ((count * interval) + low) * rounds
-    //endurance = count * (rounds * (interval + low))
-    // tabata = count * (rounds * (interval + low))
     
     func workoutDuration() -> Double {
         let route = self.routine!
@@ -57,23 +62,97 @@ class Workout : Object{
         let interval = route.interval
         let low = route.intervalLow
         let rounds = Double(route.rounds)
+        
+
         switch route.type {
         case .Classic:
             return (count * interval + low) * rounds
-        case .Endurance:
-            return count * (rounds * (interval + low))
-        case .Tabata:
-            return count * (rounds * (interval + low))
+        default:
+            return count * (((rounds-1) * (interval + low)) + (interval + restBetweenSets))
         }
+
     }
+    func createTaskTimer() -> TaskTimer{
+        let taskTimer = TaskTimer()
+        let rounds = routine!.rounds
+        let interval = routine!.interval
+        let restOrLow = routine!.intervalLow
+        let excercises = self.exercises
+        
+        
+        func classicTimer(){
+            for i in 0..<rounds{
+                for e in excercises{
+                    let task = createTask(e, duration: Int(interval), round: i+1)
+                    taskTimer.add(task)
+                }
+                let rest = createRest("Water Break", duration:Int(restOrLow))
+                taskTimer.add(rest)
+            }
+        }
+        
+        
+        func linearTimer(){
+            for e in excercises{
+                for i in 0..<rounds{
+                    let task = createTask(e, duration: Int(interval),round: i+1)
+                    taskTimer.add(task)
+                    if i != rounds-1{
+                        let low = createRest("Slow Pace/Rest", duration:Int(restOrLow))
+                        taskTimer.add(low)
+                    }
+                }
+                let rest = createRest("Water Break", duration: Int(restBetweenSets))
+                taskTimer.add(rest)
+            }
+        }
+        
+        
+        switch self.routine!.type{
+        case .Classic:
+            classicTimer();break
+        default:
+            linearTimer()
+        }
+        
+        
+        taskTimer.on_finish = {
+            self.delegate?.didFinish()
+        }
+
+        return taskTimer
+    }
+    
+
     
 }
 
 //MARK: Boilerplat
 extension Workout{
     
+    private func createTask(ex: Exercise, duration: Int, round: Int) -> Task{
+        let task = Task(label: ex.name, duration: duration) { (progress) in
+            let status = Status(progress: Double(progress), cRound: round)
+            self.delegate?.updateExerciseProgress(ex, status: status)
+        }
+        
+        task.intialClosure = {
+            self.delegate?.initLabel(ex.name)
+        }
+        
+        
+        return task
+    }
     
-    
+    private func createRest(label: String, duration: Int) -> Task{
+        let task = Task(label: label, duration: duration) { (progress) in
+            self.delegate?.updateRestProgress(label, progress: Double(progress))
+        }
+        task.intialClosure = {
+            self.delegate?.initLabel(label)
+        }
+        return task
+    }
 }
 
 

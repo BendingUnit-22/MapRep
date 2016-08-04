@@ -325,6 +325,7 @@
 				TargetAttributes = {
 					945F29011D2C67E4007F7932 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = X8WG54H8G2;
 					};
 					945F29151D2C67E4007F7932 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -671,10 +672,13 @@
 			baseConfigurationReference = 9334672BF83679A222FBB788 /* Pods-MaxRep.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MaxRep/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wu.rixing.MaxRep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -683,10 +687,13 @@
 			baseConfigurationReference = D8BCE8658D40A6484C913CAC /* Pods-MaxRep.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MaxRep/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wu.rixing.MaxRep;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

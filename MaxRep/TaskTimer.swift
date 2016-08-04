@@ -25,13 +25,12 @@
 
 import Foundation
 
-typealias ProgressClosure =  (progress: Int) -> Void
-
-
+typealias ProgressClosure = (progress: Int) -> Void
 
 class Task{
     var label: String
     var duration: Int
+    var intialClosure : (() -> Void)?
     var pClosure : ProgressClosure!
     
     init(label: String, duration: Int, pClosure : ProgressClosure){
@@ -41,7 +40,7 @@ class Task{
     }
     
     func timePass(){
-        self.duration-=1
+        self.duration-=20
     }
     
     func  shouldContinue() -> Bool {
@@ -51,6 +50,8 @@ class Task{
 
 
 class TaskTimer{
+    
+    var on_finish : (() -> Void)?
     
     private var queue : Queue<Task>!
     private var timer = NSTimer()
@@ -62,17 +63,27 @@ class TaskTimer{
     }
 
     
+    var totalTime : Double = 0.0
+    
     func add(task: Task){
+        totalTime += Double(task.duration)
         queue.enqueue(task)
     }
     
+    func add(tasks: Task...)  {
+        for t in tasks{
+            add(t)
+        }
+    }
+    
+    
+    
     func start()  {
-        print("Task Timer started")
+        print("Total Timne " + totalTime.timeFormat)
         nextIteration()
     }
     
     func pause(){
-       print("Paused")
        self.timer.invalidate()
     }
     
@@ -92,19 +103,31 @@ class TaskTimer{
     }
     
     private func runTask(task: Task){
+        
+        task.intialClosure?()
+        task.intialClosure = nil
+        
         timer = NSTimer.new(every: 1.0, {
             task.timePass()
             task.pClosure(progress: task.duration)
             if !task.shouldContinue(){
                 self.timer.invalidate()
-                print(task.label + " completed")
+                self.nextIteration()
             }
         })
         timer.start()
     }
     
+    func stop() {
+        timer.invalidate()
+        currTask = nil
+        nextTask = nil
+    }
+    
+    
     func finish() {
-        print("All Task Completed")
+        on_finish?()
+        on_finish = nil
     }
     
 }

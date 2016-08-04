@@ -9,10 +9,10 @@
 import Foundation
 import RealmSwift
 
+
 class Record: Object{
     dynamic var createAt = NSDate()
     dynamic var reps: Int = 0
-    
     convenience init(reps: Int){
         self.init()
         self.reps = reps
@@ -37,10 +37,9 @@ class Exercise : Object{
     override var description : String {
         return "Exercise: Records: \(records.count)"
     }
+ 
     
 }
-
-
 
 
 

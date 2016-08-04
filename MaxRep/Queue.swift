@@ -10,7 +10,7 @@ import Foundation
 
 class Queue<T>{
     // private array containing all elements
-    private var elements = Array<T>()
+    var elements = Array<T>()
     
     // total elements
     var count : Int {

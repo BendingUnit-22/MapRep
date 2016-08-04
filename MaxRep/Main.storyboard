@@ -338,9 +338,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgn-N2-AnM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="sZb-Lh-V44" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="698" y="1227"/>
+            <point key="canvasLocation" x="978" y="1157"/>
         </scene>
-        <!--In Workout View Controller-->
+        <!--Hello-->
         <scene sceneID="6mm-8L-Du7">
             <objects>
                 <viewController storyboardIdentifier="InWorkoutViewController" id="p23-dr-8La" customClass="InWorkoutViewController" customModule="MaxRep" customModuleProvider="target" sceneMemberID="viewController">
@@ -349,12 +349,12 @@
                         <viewControllerLayoutGuide type="bottom" id="g2s-UO-NOd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yad-mP-eXP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5Sb-a7-EH6">
-                        <barButtonItem key="rightBarButtonItem" systemItem="stop" id="ToQ-9m-CoT">
+                    <navigationItem key="navigationItem" title="Hello" id="5Sb-a7-EH6">
+                        <barButtonItem key="rightBarButtonItem" systemItem="pause" id="ToQ-9m-CoT">
                             <connections>
                                 <action selector="stop:" destination="p23-dr-8La" id="Q7u-nf-FYY"/>
                             </connections>
@@ -363,7 +363,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kd4-aF-UFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328" y="1970"/>
+            <point key="canvasLocation" x="1335" y="1879"/>
         </scene>
         <!--Add View Controller-->
         <scene sceneID="dDF-iV-Rsc">
@@ -503,7 +503,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uve-uM-fkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249" y="358"/>
+            <point key="canvasLocation" x="978" y="367"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xt2-1W-vn2">
@@ -600,11 +600,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bvb-tz-JgH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ncL-gQ-iRA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ncL-gQ-iRA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="barTintColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.1725741029" green="0.21834245320000001" blue="0.44677489999999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -613,7 +617,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEc-mb-2Ye" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="712" y="1963"/>
+            <point key="canvasLocation" x="828" y="1879"/>
         </scene>
     </scenes>
 </document>

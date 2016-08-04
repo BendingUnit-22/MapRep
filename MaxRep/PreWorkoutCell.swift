@@ -14,15 +14,14 @@ enum LineDirect {
 }
 
 
-
-
-
-@IBDesignable class PreWorkoutCell: UITableViewCell {
+class PreWorkoutCell: UITableViewCell {
     @IBInspectable var defaultColor = UIColor.flatGrayColor()
-    @IBInspectable var fillColor = UIColor.flatNavyBlueColor()
+    @IBInspectable var fillColor = UIColor.flatGrayColorDark()
+    @IBInspectable var completionColor = UIColor.flatPurpleColor()
     @IBOutlet weak var indicatorView: UIView!
     @IBOutlet weak var title: UILabel!
     var connector : LineDirect?
+    //var percentCompleted : CGFloat = 0.0
     
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
@@ -44,6 +43,7 @@ enum LineDirect {
             line.addLineToPoint(p2)
         }
         
+        
         switch self.connector! {
         case .Up:
             link(uPstart, p2: uPend); break
@@ -61,11 +61,12 @@ enum LineDirect {
     internal func drawRingFittingInsideView(rect: CGRect)
     {
         let desiredLineWidth:CGFloat = 1   // your desired value
-        let hw:CGFloat = desiredLineWidth/2.0 + 15.0
+
+        let hw:CGFloat = desiredLineWidth/2.0 + 14.0
         
         let drawArea = CGRectInset(rect,hw,hw)
         let circlePath = UIBezierPath(ovalInRect: drawArea)
-        
+    
         if let _ = connector{
             let start = CGPoint(x: CGRectGetMidX(drawArea), y: CGRectGetMidY(drawArea))
             let l =  hw/2.0
@@ -81,5 +82,49 @@ enum LineDirect {
         shapeLayer.lineWidth = desiredLineWidth
         
         indicatorView.layer.addSublayer(shapeLayer)
+        self.drawArea = drawArea
+    }
+    
+    var drawArea: CGRect?
+    
+    func fillPercent(percent: CGFloat){
+        if percent <= 0.0 && drawArea == nil{
+            return
+        }
+        if percent >= 0.95{
+            fillColor = completionColor
+        }
+        
+        let center = CGPoint(x: CGRectGetMidX(drawArea!), y: CGRectGetMidY(drawArea!))
+        let radius = drawArea!.width/2.0
+        
+    	let path = UIBezierPath()
+        path.moveToPoint(center)
+        
+        let startAngle = -90.0.degreesToRadians
+        let endAngle = Double(-90.0 + 360.0 * percent).degreesToRadians
+        
+        path.addArcWithCenter(center, radius: radius, startAngle:startAngle, endAngle: endAngle, clockwise: true)
+        path.closePath()
+        
+        let shape = CAShapeLayer()
+        shape.path = path.CGPath
+        shape.fillColor = fillColor.CGColor
+        indicatorView.layer.addSublayer(shape)
+        indicatorView.setNeedsLayout()
+        indicatorView.setNeedsDisplay()
+    }
+    
+    
+}
+
+
+
+extension Double{
+    var degreesToRadians : CGFloat {
+        return CGFloat(self) * CGFloat(M_PI) / 180.0
     }
 }
+
+
+

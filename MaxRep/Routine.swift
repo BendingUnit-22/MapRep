@@ -21,6 +21,7 @@ class Routine: Object {
     dynamic var rounds = 1
     dynamic var interval:Double = 0.0
     dynamic var intervalLow:Double = 0.0
+    
     //
     var type : HiiTType{
         get{ return HiiTType(rawValue: typeID)!

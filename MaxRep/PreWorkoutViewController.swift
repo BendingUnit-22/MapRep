@@ -10,6 +10,7 @@ class PreWorkoutViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var workout: Workout!
     var navController : UINavigationController?
+    var inWorkoutController: InWorkoutViewController?
     var headerView: HeaderCell!
     var globalTime : Double = 0.0
     var controlBtn : UIButton?
@@ -31,14 +32,16 @@ class PreWorkoutViewController: UIViewController {
             confirmQuit()
         }else{
             self.performSegueWithIdentifier("segueUnwind", sender: self)
-        }
+        }	
     }
     
     override func viewWillAppear(animated: Bool) {
         if let btn = controlBtn{
             btn.setTitle("Resume", forState: .Normal)
             btn.backgroundColor = UIColor.flatRedColor()
+            self.tableView.reloadData()
         }
+        inWorkoutController?.timer?.pause()
     }
 }
 
@@ -54,6 +57,7 @@ extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
             startTimer(workout.workoutDuration())
             controlBtn = sender as? UIButton
         }else{
+            inWorkoutController?.timer?.resume()
             self.presentViewController(navController!, animated: true, completion: nil)
         }
 
@@ -63,7 +67,14 @@ extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! PreWorkoutCell
         let cIndex = indexPath.row
         let count = workout.exercises.count
-        cell.title.text = workout.exercises[cIndex].name
+        let exercise = workout.exercises[cIndex]
+        cell.title.text = exercise.name
+        if let s = inWorkoutController?.stats[exercise.name]{
+            let percent = s!.percent(workout.routine!.rounds)
+            cell.fillPercent(percent)
+        }
+        
+      
         if count > 1 {
             if cIndex == 0{
                 cell.connector = .Down
@@ -73,6 +84,7 @@ extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
                 cell.connector = .Both
             }
         }
+        
         return cell
     }
     
@@ -102,6 +114,28 @@ extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     
+}
+
+// MARK: Segues
+
+
+extension PreWorkoutViewController{
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toInWorkout"{
+            let nav = segue.destinationViewController as! UINavigationController
+            navController = nav
+            let wkVC = navController!.childViewControllers[0] as! InWorkoutViewController
+            inWorkoutController = wkVC
+            wkVC.workout = self.workout
+            wkVC.on_completion = {
+                self.workoutCompleted()
+            }
+        }
+    }
+    
+    
+    
     private func startTimer(duration: Double){
         headerView.durationLabel.text = "time"
         
@@ -117,6 +151,7 @@ extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
     private func confirmQuit(){
         let alertController = UIAlertController(title: "Attempt to quit", message: "All your progess will be lost!", preferredStyle: .Alert)
         let okAction = UIAlertAction(title: "Ok", style: .Destructive) { (alert) in
+            self.inWorkoutController?.timer?.stop()
             self.performSegueWithIdentifier("segueUnwind", sender: self)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
@@ -124,24 +159,16 @@ extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
         alertController.addAction(cancelAction)
         self.presentViewController(alertController, animated: true, completion: nil)
     }
+
     
-}
-
-// MARK: Segues
-
-
-extension PreWorkoutViewController{
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "toInWorkout"{
-            let nav = segue.destinationViewController as! UINavigationController
-            navController = nav
-            let wkVC = navController!.childViewControllers[0] as! InWorkoutViewController
-            wkVC.workout = self.workout
+    private func workoutCompleted(){
+        controlBtn?.setTitle("Finish", forState: .Normal)
+        let alertController = UIAlertController(title: "Finished", message: "", preferredStyle: .Alert)
+        let okAction = UIAlertAction(title: "Ok", style: .Destructive) { (alert) in
         }
+        alertController.addAction(okAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
-    
-    
 }
 
 
