@@ -9,6 +9,7 @@
 
 import UIKit
 import ChameleonFramework
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         application.statusBarStyle = UIStatusBarStyle.LightContent
+        
+        do{
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+        }catch{
+            print("Playback disable")
+        }
+        
         return true
     }
 

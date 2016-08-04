@@ -30,7 +30,7 @@ class PreWorkoutCell: UITableViewCell {
     
     
     
-    func makeLineFrom(point: CGPoint, length: CGFloat) -> UIBezierPath{
+    func makeLineFrom(point: CGPoint, length: CGFloat){
         let line = UIBezierPath()
         let uPstart = CGPoint(x: point.x, y: point.y - length)
         let dPstart = CGPoint(x: point.x, y: point.y + length)
@@ -41,6 +41,12 @@ class PreWorkoutCell: UITableViewCell {
         func link(p1: CGPoint, p2: CGPoint){
             line.moveToPoint(p1)
             line.addLineToPoint(p2)
+            line.lineWidth = 2.0
+            let dashes: [CGFloat] = [line.lineWidth * 0, line.lineWidth * 2]
+            line.setLineDash(dashes, count: dashes.count, phase: 0)
+            line.lineCapStyle = .Round
+            defaultColor.setStroke()
+            line.stroke()
         }
         
         
@@ -54,7 +60,6 @@ class PreWorkoutCell: UITableViewCell {
              link(dPstart, p2: dPend)
         }
         
-        return line
     }
     
     
@@ -69,9 +74,8 @@ class PreWorkoutCell: UITableViewCell {
     
         if let _ = connector{
             let start = CGPoint(x: CGRectGetMidX(drawArea), y: CGRectGetMidY(drawArea))
-            let l =  hw/2.0
-            let line = makeLineFrom(start, length: l)
-            circlePath.appendPath(line)
+            let l =  hw/2.0 + 2.0
+            makeLineFrom(start, length: l)
         }
         
         

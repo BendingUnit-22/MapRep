@@ -11,6 +11,9 @@
 		7A01E24196B8488742956A92 /* Pods_MaxRep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094D470271F857B8621D86A7 /* Pods_MaxRep.framework */; };
 		941AE98A1D40086400263AB6 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE9891D40086400263AB6 /* UnwindSegue.swift */; };
 		941AE98C1D4048BE00263AB6 /* PreWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE98B1D4048BE00263AB6 /* PreWorkoutCell.swift */; };
+		94489D031D53BC16001BF1E0 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94489D021D53BC16001BF1E0 /* WorkoutView.swift */; };
+		94489D051D53BFAC001BF1E0 /* InWorkoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94489D041D53BFAC001BF1E0 /* InWorkoutHelper.swift */; };
+		94489D071D53CCAF001BF1E0 /* referee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94489D061D53CCAF001BF1E0 /* referee.wav */; };
 		945F29061D2C67E4007F7932 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29051D2C67E4007F7932 /* AppDelegate.swift */; };
 		945F290D1D2C67E4007F7932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 945F290C1D2C67E4007F7932 /* Assets.xcassets */; };
 		945F29101D2C67E4007F7932 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945F290E1D2C67E4007F7932 /* LaunchScreen.storyboard */; };
@@ -64,6 +67,9 @@
 		9334672BF83679A222FBB788 /* Pods-MaxRep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRep.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRep/Pods-MaxRep.debug.xcconfig"; sourceTree = "<group>"; };
 		941AE9891D40086400263AB6 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		941AE98B1D4048BE00263AB6 /* PreWorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreWorkoutCell.swift; sourceTree = "<group>"; };
+		94489D021D53BC16001BF1E0 /* WorkoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		94489D041D53BFAC001BF1E0 /* InWorkoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InWorkoutHelper.swift; sourceTree = "<group>"; };
+		94489D061D53CCAF001BF1E0 /* referee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = referee.wav; sourceTree = "<group>"; };
 		945F29021D2C67E4007F7932 /* MaxRep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaxRep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945F29051D2C67E4007F7932 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		945F290C1D2C67E4007F7932 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 				945F29401D2C69A0007F7932 /* Controllers */,
 				945F29331D2C693D007F7932 /* Model */,
 				945F290C1D2C67E4007F7932 /* Assets.xcassets */,
+				94489D061D53CCAF001BF1E0 /* referee.wav */,
 				945F290E1D2C67E4007F7932 /* LaunchScreen.storyboard */,
 				945F29111D2C67E4007F7932 /* Info.plist */,
 			);
@@ -208,6 +215,7 @@
 				945F29431D2C69DF007F7932 /* PreWorkoutViewController.swift */,
 				945F29451D2C69E9007F7932 /* AddViewController.swift */,
 				945F294B1D2C6A00007F7932 /* InWorkoutViewController.swift */,
+				94489D041D53BFAC001BF1E0 /* InWorkoutHelper.swift */,
 				945F29471D2C69F3007F7932 /* AppendViewController.swift */,
 			);
 			name = Controllers;
@@ -221,6 +229,7 @@
 				941AE98B1D4048BE00263AB6 /* PreWorkoutCell.swift */,
 				9484811A1D3492B900A8CCF5 /* HeaderCell.swift */,
 				948481101D304F9A00A8CCF5 /* PushSegue.swift */,
+				94489D021D53BC16001BF1E0 /* WorkoutView.swift */,
 				941AE9891D40086400263AB6 /* UnwindSegue.swift */,
 			);
 			name = View;
@@ -363,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				945F29421D2C69CE007F7932 /* Main.storyboard in Resources */,
+				94489D071D53CCAF001BF1E0 /* referee.wav in Resources */,
 				945F29101D2C67E4007F7932 /* LaunchScreen.storyboard in Resources */,
 				945F290D1D2C67E4007F7932 /* Assets.xcassets in Resources */,
 			);
@@ -512,12 +522,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94489D031D53BC16001BF1E0 /* WorkoutView.swift in Sources */,
 				945F29461D2C69E9007F7932 /* AddViewController.swift in Sources */,
 				946608D11D4BE23900268DD8 /* Queue.swift in Sources */,
 				945F29351D2C694C007F7932 /* SwiftyTimer.swift in Sources */,
 				945F29481D2C69F3007F7932 /* AppendViewController.swift in Sources */,
 				948481191D34341100A8CCF5 /* Routine.swift in Sources */,
 				9484811B1D3492B900A8CCF5 /* HeaderCell.swift in Sources */,
+				94489D051D53BFAC001BF1E0 /* InWorkoutHelper.swift in Sources */,
 				945F294F1D2C6A28007F7932 /* WorkoutSelectionCell.swift in Sources */,
 				945F293F1D2C6974007F7932 /* SpeechSynthesizer.swift in Sources */,
 				945F29061D2C67E4007F7932 /* AppDelegate.swift in Sources */,

@@ -40,7 +40,7 @@ class Task{
     }
     
     func timePass(){
-        self.duration-=20
+        self.duration-=1
     }
     
     func  shouldContinue() -> Bool {
@@ -55,18 +55,16 @@ class TaskTimer{
     
     private var queue : Queue<Task>!
     private var timer = NSTimer()
-    private var currTask : Task?
-    private var nextTask : Task?
+    var currTask : Task?
+    var nextTask : Task?
     
     init(){
         self.queue = Queue<Task>()
     }
 
     
-    var totalTime : Double = 0.0
     
     func add(task: Task){
-        totalTime += Double(task.duration)
         queue.enqueue(task)
     }
     
@@ -79,7 +77,6 @@ class TaskTimer{
     
     
     func start()  {
-        print("Total Timne " + totalTime.timeFormat)
         nextIteration()
     }
     

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--MAXREPS-->
@@ -340,7 +341,7 @@
             </objects>
             <point key="canvasLocation" x="978" y="1157"/>
         </scene>
-        <!--Hello-->
+        <!--In Workout View Controller-->
         <scene sceneID="6mm-8L-Du7">
             <objects>
                 <viewController storyboardIdentifier="InWorkoutViewController" id="p23-dr-8La" customClass="InWorkoutViewController" customModule="MaxRep" customModuleProvider="target" sceneMemberID="viewController">
@@ -351,15 +352,92 @@
                     <view key="view" contentMode="scaleToFill" id="Yad-mP-eXP">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5I-XZ-UgY" customClass="WorkoutView" customModule="MaxRep" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="252"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:22" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AyA-Yl-JsJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="gQm-se-QKa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="96"/>
+                                        <color key="textColor" red="0.1725741029" green="0.21834245320000001" blue="0.44677489999999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y8c-wK-lEC">
+                                        <rect key="frame" x="0.0" y="211" width="320" height="41"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbJ-Vz-W7i">
+                                                <rect key="frame" x="0.0" y="14" width="320" height="27"/>
+                                                <attributedString key="attributedText">
+                                                    <fragment content="JUMPING JACKS">
+                                                        <attributes>
+                                                            <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <font key="NSFont" size="17" name="HelveticaNeue"/>
+                                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="truncatingTail" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                        </attributes>
+                                                    </fragment>
+                                                </attributedString>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="EbJ-Vz-W7i" firstAttribute="leading" secondItem="Y8c-wK-lEC" secondAttribute="leading" id="Ohs-9x-yDg"/>
+                                            <constraint firstAttribute="bottom" secondItem="EbJ-Vz-W7i" secondAttribute="bottom" id="bPF-zQ-qxD"/>
+                                            <constraint firstAttribute="trailing" secondItem="EbJ-Vz-W7i" secondAttribute="trailing" id="ns5-k3-1yP"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 of 12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBm-TO-G3H">
+                                        <rect key="frame" x="0.0" y="158" width="320" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="hCc-XS-NlT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Y8c-wK-lEC" firstAttribute="trailing" secondItem="VBm-TO-G3H" secondAttribute="trailing" id="1xv-Bz-QAk"/>
+                                    <constraint firstItem="VBm-TO-G3H" firstAttribute="top" secondItem="AyA-Yl-JsJ" secondAttribute="bottom" constant="8" id="3Fp-cV-3K2"/>
+                                    <constraint firstAttribute="trailing" secondItem="AyA-Yl-JsJ" secondAttribute="trailing" id="7de-mJ-TUw"/>
+                                    <constraint firstItem="Y8c-wK-lEC" firstAttribute="top" secondItem="VBm-TO-G3H" secondAttribute="bottom" constant="13" id="DRU-g9-MmX"/>
+                                    <constraint firstAttribute="trailing" secondItem="VBm-TO-G3H" secondAttribute="trailing" id="FqE-5B-2gs"/>
+                                    <constraint firstAttribute="bottom" secondItem="Y8c-wK-lEC" secondAttribute="bottom" id="JbK-QK-pSk"/>
+                                    <constraint firstItem="AyA-Yl-JsJ" firstAttribute="leading" secondItem="M5I-XZ-UgY" secondAttribute="leading" id="NXG-VW-a16"/>
+                                    <constraint firstItem="Y8c-wK-lEC" firstAttribute="leading" secondItem="VBm-TO-G3H" secondAttribute="leading" id="cMb-FA-qPu"/>
+                                    <constraint firstItem="VBm-TO-G3H" firstAttribute="leading" secondItem="M5I-XZ-UgY" secondAttribute="leading" id="gmo-4h-y9i"/>
+                                    <constraint firstItem="EbJ-Vz-W7i" firstAttribute="top" secondItem="M5I-XZ-UgY" secondAttribute="top" constant="225" id="nzk-Fz-8B0"/>
+                                    <constraint firstItem="AyA-Yl-JsJ" firstAttribute="top" secondItem="M5I-XZ-UgY" secondAttribute="top" id="oCa-te-Apo"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="nextLabel" destination="EbJ-Vz-W7i" id="uLf-tf-iwh"/>
+                                    <outlet property="roundLabel" destination="VBm-TO-G3H" id="oJw-oD-dTh"/>
+                                    <outlet property="timeLabel" destination="AyA-Yl-JsJ" id="Tkx-vQ-Qp3"/>
+                                </connections>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="M5I-XZ-UgY" secondAttribute="trailing" id="GRb-a4-e7x"/>
+                            <constraint firstItem="M5I-XZ-UgY" firstAttribute="height" secondItem="Yad-mP-eXP" secondAttribute="height" multiplier="0.5" id="Sll-7r-B6U"/>
+                            <constraint firstItem="M5I-XZ-UgY" firstAttribute="top" secondItem="evs-lP-qaW" secondAttribute="bottom" id="UVb-yg-lCM"/>
+                            <constraint firstItem="M5I-XZ-UgY" firstAttribute="leading" secondItem="Yad-mP-eXP" secondAttribute="leading" id="WAd-9B-TTW"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Hello" id="5Sb-a7-EH6">
+                    <navigationItem key="navigationItem" id="5Sb-a7-EH6">
                         <barButtonItem key="rightBarButtonItem" systemItem="pause" id="ToQ-9m-CoT">
                             <connections>
                                 <action selector="stop:" destination="p23-dr-8La" id="Q7u-nf-FYY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="workoutView" destination="M5I-XZ-UgY" id="bEd-yg-PDF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kd4-aF-UFY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

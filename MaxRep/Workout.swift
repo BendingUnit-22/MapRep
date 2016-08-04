@@ -98,7 +98,7 @@ class Workout : Object{
                     let task = createTask(e, duration: Int(interval),round: i+1)
                     taskTimer.add(task)
                     if i != rounds-1{
-                        let low = createRest("Slow Pace/Rest", duration:Int(restOrLow))
+                        let low = createRest("Rest Pace", duration:Int(restOrLow))
                         taskTimer.add(low)
                     }
                 }

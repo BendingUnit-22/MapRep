@@ -9,9 +9,13 @@
 import Foundation
 import AVFoundation
 
+var player: AVAudioPlayer?
+
 class SpeechSynthesizer{
     
     let synthesizer: AVSpeechSynthesizer!
+    let url = NSBundle.mainBundle().URLForResource("referee", withExtension: "wav")!
+
     
     init(){
         synthesizer = AVSpeechSynthesizer()
@@ -24,5 +28,15 @@ class SpeechSynthesizer{
         synthesizer.speakUtterance(utterance)
     }
     
+    func playSound() {
+        do {
+            player = try AVAudioPlayer(contentsOfURL: url)
+            guard let player = player else { return }
+            player.prepareToPlay()
+            player.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
+    }
     
 }

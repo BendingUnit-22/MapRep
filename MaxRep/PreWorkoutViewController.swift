@@ -11,7 +11,7 @@ class PreWorkoutViewController: UIViewController {
     var workout: Workout!
     var navController : UINavigationController?
     var inWorkoutController: InWorkoutViewController?
-    var headerView: HeaderCell!
+    var headerView: HeaderCell?
     var globalTime : Double = 0.0
     var controlBtn : UIButton?
     
@@ -73,8 +73,7 @@ extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
             let percent = s!.percent(workout.routine!.rounds)
             cell.fillPercent(percent)
         }
-        
-      
+
         if count > 1 {
             if cIndex == 0{
                 cell.connector = .Down
@@ -89,15 +88,16 @@ extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let wkt = workout
-        let cell =  tableView.dequeueReusableCellWithIdentifier("header") as! HeaderCell
-        let type = "\(wkt.routine!.type)"
-        cell.title.text = wkt.name
-        cell.type.text = type
-        cell.duration.text = wkt.workoutDuration().timeFormat
-        self.headerView = cell
-        return cell
-        
+        if headerView == nil{
+            let wkt = workout
+            let cell =  tableView.dequeueReusableCellWithIdentifier("header") as! HeaderCell
+            let type = "\(wkt.routine!.type)"
+            cell.title.text = wkt.name
+            cell.type.text = type
+            cell.duration.text = wkt.workoutDuration().timeFormat
+             self.headerView = cell
+        }
+        return self.headerView
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -137,10 +137,10 @@ extension PreWorkoutViewController{
     
     
     private func startTimer(duration: Double){
-        headerView.durationLabel.text = "time"
+        headerView?.durationLabel.text = "elapsed"
         
         let timer = NSTimer.new(every: 1.0) {
-            self.headerView.duration.text = self.globalTime.timeFormat
+            self.headerView?.duration.text = self.globalTime.timeFormat
             self.globalTime += 1.0
         }
         timer.start()
