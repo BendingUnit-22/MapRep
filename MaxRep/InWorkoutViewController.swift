@@ -64,7 +64,7 @@ extension InWorkoutViewController: InWorkoutDelegate{
     func initLabel(text: String) {
         self.navigationController?.navigationBar.topItem?.title = text
         if self.timer.nextTask != nil{
-            self.workoutView.nextLabel.text = text
+            self.workoutView.nextLabel.text = self.timer.nextTask!.label
         }
     }
     

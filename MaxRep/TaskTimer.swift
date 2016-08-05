@@ -125,6 +125,7 @@ class TaskTimer{
     func finish() {
         on_finish?()
         on_finish = nil
+        start()
     }
     
 }
