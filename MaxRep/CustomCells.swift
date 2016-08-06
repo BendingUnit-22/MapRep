@@ -1,14 +1,33 @@
 //
-//  WorkoutSelectionCell.swift
+//  WorkoutView.swift
 //  MaxRep
 //
-//  Created by Rixing Wu on 7/5/16.
+//  Created by Rixing on 8/4/16.
 //  Copyright © 2016 Rixing Wu. All rights reserved.
 //
 
 import UIKit
-import Foundation
-import ChameleonFramework
+
+class WorkoutView: UIView {
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var roundLabel: UILabel!
+    @IBOutlet weak var nextLabel: UILabel!
+    
+}
+
+
+class HeaderCell: UITableViewCell {
+    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var routine: UILabel!
+    @IBOutlet weak var type: UILabel!
+    @IBOutlet weak var duration: UILabel!
+    @IBOutlet weak var durationLabel: UILabel!
+    
+}
+
+
 
 class WorkoutSelectionCell: UITableViewCell {
     

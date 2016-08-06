@@ -9,10 +9,9 @@
 /* Begin PBXBuildFile section */
 		10641F67C90A660777DD0BC5 /* Pods_MaxRepUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F091F7BB42D1A080EC8CDDDF /* Pods_MaxRepUITests.framework */; };
 		7A01E24196B8488742956A92 /* Pods_MaxRep.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 094D470271F857B8621D86A7 /* Pods_MaxRep.framework */; };
-		941AE98A1D40086400263AB6 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE9891D40086400263AB6 /* UnwindSegue.swift */; };
 		941AE98C1D4048BE00263AB6 /* PreWorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941AE98B1D4048BE00263AB6 /* PreWorkoutCell.swift */; };
-		94489D031D53BC16001BF1E0 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94489D021D53BC16001BF1E0 /* WorkoutView.swift */; };
-		94489D051D53BFAC001BF1E0 /* InWorkoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94489D041D53BFAC001BF1E0 /* InWorkoutHelper.swift */; };
+		94489D031D53BC16001BF1E0 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94489D021D53BC16001BF1E0 /* CustomCells.swift */; };
+		94489D051D53BFAC001BF1E0 /* InWorkout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94489D041D53BFAC001BF1E0 /* InWorkout+Extension.swift */; };
 		94489D071D53CCAF001BF1E0 /* referee.wav in Resources */ = {isa = PBXBuildFile; fileRef = 94489D061D53CCAF001BF1E0 /* referee.wav */; };
 		945F29061D2C67E4007F7932 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29051D2C67E4007F7932 /* AppDelegate.swift */; };
 		945F290D1D2C67E4007F7932 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 945F290C1D2C67E4007F7932 /* Assets.xcassets */; };
@@ -30,15 +29,13 @@
 		945F29481D2C69F3007F7932 /* AppendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29471D2C69F3007F7932 /* AppendViewController.swift */; };
 		945F294A1D2C69F7007F7932 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F29491D2C69F7007F7932 /* HomeViewController.swift */; };
 		945F294C1D2C6A00007F7932 /* InWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F294B1D2C6A00007F7932 /* InWorkoutViewController.swift */; };
-		945F294F1D2C6A28007F7932 /* WorkoutSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F294E1D2C6A28007F7932 /* WorkoutSelectionCell.swift */; };
 		946030221D2C836000833E15 /* MPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946030211D2C836000833E15 /* MPService.swift */; };
 		946608D11D4BE23900268DD8 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 946608D01D4BE23900268DD8 /* Queue.swift */; };
 		9484810D1D2C937000A8CCF5 /* WorkoutSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484810C1D2C937000A8CCF5 /* WorkoutSpec.swift */; };
 		9484810F1D2D750300A8CCF5 /* AutoUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484810E1D2D750300A8CCF5 /* AutoUpdate.swift */; };
-		948481111D304F9A00A8CCF5 /* PushSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948481101D304F9A00A8CCF5 /* PushSegue.swift */; };
-		948481151D31E95500A8CCF5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948481141D31E95500A8CCF5 /* HomeView.swift */; };
+		948481111D304F9A00A8CCF5 /* PushSegue+Unwind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948481101D304F9A00A8CCF5 /* PushSegue+Unwind.swift */; };
 		948481191D34341100A8CCF5 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 948481181D34341100A8CCF5 /* Routine.swift */; };
-		9484811B1D3492B900A8CCF5 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9484811A1D3492B900A8CCF5 /* HeaderCell.swift */; };
+		9496164D1D550ED500A09093 /* PreWorkout+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9496164C1D550ED500A09093 /* PreWorkout+Extension.swift */; };
 		EC0FA0FB307C8A4ED664AF16 /* Pods_MaxRepTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B71936A0EE2C56B127B1DFE3 /* Pods_MaxRepTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,10 +62,9 @@
 		2FAAEB8AA091A43AE25915B6 /* Pods-MaxRepUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRepUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRepUITests/Pods-MaxRepUITests.release.xcconfig"; sourceTree = "<group>"; };
 		380DB34AE085B58E4C6DBCAE /* Pods-MaxRepTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRepTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRepTests/Pods-MaxRepTests.release.xcconfig"; sourceTree = "<group>"; };
 		9334672BF83679A222FBB788 /* Pods-MaxRep.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRep.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRep/Pods-MaxRep.debug.xcconfig"; sourceTree = "<group>"; };
-		941AE9891D40086400263AB6 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		941AE98B1D4048BE00263AB6 /* PreWorkoutCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreWorkoutCell.swift; sourceTree = "<group>"; };
-		94489D021D53BC16001BF1E0 /* WorkoutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
-		94489D041D53BFAC001BF1E0 /* InWorkoutHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InWorkoutHelper.swift; sourceTree = "<group>"; };
+		94489D021D53BC16001BF1E0 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
+		94489D041D53BFAC001BF1E0 /* InWorkout+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InWorkout+Extension.swift"; sourceTree = "<group>"; };
 		94489D061D53CCAF001BF1E0 /* referee.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = referee.wav; sourceTree = "<group>"; };
 		945F29021D2C67E4007F7932 /* MaxRep.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaxRep.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		945F29051D2C67E4007F7932 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,15 +88,13 @@
 		945F29471D2C69F3007F7932 /* AppendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppendViewController.swift; sourceTree = "<group>"; };
 		945F29491D2C69F7007F7932 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		945F294B1D2C6A00007F7932 /* InWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InWorkoutViewController.swift; sourceTree = "<group>"; };
-		945F294E1D2C6A28007F7932 /* WorkoutSelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSelectionCell.swift; sourceTree = "<group>"; };
 		946030211D2C836000833E15 /* MPService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MPService.swift; sourceTree = "<group>"; };
 		946608D01D4BE23900268DD8 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		9484810C1D2C937000A8CCF5 /* WorkoutSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutSpec.swift; sourceTree = "<group>"; };
 		9484810E1D2D750300A8CCF5 /* AutoUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoUpdate.swift; sourceTree = "<group>"; };
-		948481101D304F9A00A8CCF5 /* PushSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushSegue.swift; sourceTree = "<group>"; };
-		948481141D31E95500A8CCF5 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		948481101D304F9A00A8CCF5 /* PushSegue+Unwind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PushSegue+Unwind.swift"; sourceTree = "<group>"; };
 		948481181D34341100A8CCF5 /* Routine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
-		9484811A1D3492B900A8CCF5 /* HeaderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderCell.swift; sourceTree = "<group>"; };
+		9496164C1D550ED500A09093 /* PreWorkout+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PreWorkout+Extension.swift"; sourceTree = "<group>"; };
 		9C39C9C579452EFB2EDF3ADE /* Pods-MaxRepTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRepTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRepTests/Pods-MaxRepTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B71936A0EE2C56B127B1DFE3 /* Pods_MaxRepTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaxRepTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8BCE8658D40A6484C913CAC /* Pods-MaxRep.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaxRep.release.xcconfig"; path = "Pods/Target Support Files/Pods-MaxRep/Pods-MaxRep.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,9 +207,10 @@
 			children = (
 				945F29491D2C69F7007F7932 /* HomeViewController.swift */,
 				945F29431D2C69DF007F7932 /* PreWorkoutViewController.swift */,
+				9496164C1D550ED500A09093 /* PreWorkout+Extension.swift */,
 				945F29451D2C69E9007F7932 /* AddViewController.swift */,
 				945F294B1D2C6A00007F7932 /* InWorkoutViewController.swift */,
-				94489D041D53BFAC001BF1E0 /* InWorkoutHelper.swift */,
+				94489D041D53BFAC001BF1E0 /* InWorkout+Extension.swift */,
 				945F29471D2C69F3007F7932 /* AppendViewController.swift */,
 			);
 			name = Controllers;
@@ -224,13 +219,9 @@
 		945F294D1D2C6A10007F7932 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				948481141D31E95500A8CCF5 /* HomeView.swift */,
-				945F294E1D2C6A28007F7932 /* WorkoutSelectionCell.swift */,
 				941AE98B1D4048BE00263AB6 /* PreWorkoutCell.swift */,
-				9484811A1D3492B900A8CCF5 /* HeaderCell.swift */,
-				948481101D304F9A00A8CCF5 /* PushSegue.swift */,
-				94489D021D53BC16001BF1E0 /* WorkoutView.swift */,
-				941AE9891D40086400263AB6 /* UnwindSegue.swift */,
+				948481101D304F9A00A8CCF5 /* PushSegue+Unwind.swift */,
+				94489D021D53BC16001BF1E0 /* CustomCells.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -522,15 +513,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94489D031D53BC16001BF1E0 /* WorkoutView.swift in Sources */,
+				94489D031D53BC16001BF1E0 /* CustomCells.swift in Sources */,
 				945F29461D2C69E9007F7932 /* AddViewController.swift in Sources */,
 				946608D11D4BE23900268DD8 /* Queue.swift in Sources */,
 				945F29351D2C694C007F7932 /* SwiftyTimer.swift in Sources */,
 				945F29481D2C69F3007F7932 /* AppendViewController.swift in Sources */,
 				948481191D34341100A8CCF5 /* Routine.swift in Sources */,
-				9484811B1D3492B900A8CCF5 /* HeaderCell.swift in Sources */,
-				94489D051D53BFAC001BF1E0 /* InWorkoutHelper.swift in Sources */,
-				945F294F1D2C6A28007F7932 /* WorkoutSelectionCell.swift in Sources */,
+				94489D051D53BFAC001BF1E0 /* InWorkout+Extension.swift in Sources */,
 				945F293F1D2C6974007F7932 /* SpeechSynthesizer.swift in Sources */,
 				945F29061D2C67E4007F7932 /* AppDelegate.swift in Sources */,
 				945F29441D2C69DF007F7932 /* PreWorkoutViewController.swift in Sources */,
@@ -538,13 +527,12 @@
 				945F29391D2C6959007F7932 /* MPError.swift in Sources */,
 				945F293D1D2C696C007F7932 /* TaskTimer.swift in Sources */,
 				945F294C1D2C6A00007F7932 /* InWorkoutViewController.swift in Sources */,
-				941AE98A1D40086400263AB6 /* UnwindSegue.swift in Sources */,
 				946030221D2C836000833E15 /* MPService.swift in Sources */,
 				945F29371D2C6953007F7932 /* Workout.swift in Sources */,
-				948481111D304F9A00A8CCF5 /* PushSegue.swift in Sources */,
-				948481151D31E95500A8CCF5 /* HomeView.swift in Sources */,
+				948481111D304F9A00A8CCF5 /* PushSegue+Unwind.swift in Sources */,
 				945F293B1D2C695E007F7932 /* Exercise.swift in Sources */,
 				945F294A1D2C69F7007F7932 /* HomeViewController.swift in Sources */,
+				9496164D1D550ED500A09093 /* PreWorkout+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

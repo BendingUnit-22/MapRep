@@ -10,23 +10,19 @@ import Foundation
 import RealmSwift
 
 
-
 class Workout : Object{
     dynamic var name = ""
     dynamic var createdAt = NSDate()
     dynamic var routine : Routine?
     
     var restBetweenSets = 2.0.minutes
-    
     var exercises = List<Exercise>()
-    
-    var delegate : InWorkoutDelegate?
+    var delegate : WorkoutDelegate?
     
     func append(execise: Exercise) throws{
         guard !execise.name.isEmpty else{
             throw MPError.EmptyEntry
         }
-        
         exercises.append(execise)
     }
     
@@ -62,8 +58,6 @@ class Workout : Object{
         let interval = route.interval
         let low = route.intervalLow
         let rounds = Double(route.rounds)
-        
-
         switch route.type {
         case .Classic:
             return (count * interval + low) * rounds
@@ -78,7 +72,6 @@ class Workout : Object{
         let interval = routine!.interval
         let restOrLow = routine!.intervalLow
         let excercises = self.exercises
-        
         
         func classicTimer(){
             for i in 0..<rounds{
@@ -140,7 +133,6 @@ extension Workout{
             self.delegate?.initLabel(ex.name)
         }
         
-        
         return task
     }
     
@@ -154,15 +146,6 @@ extension Workout{
         return task
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 

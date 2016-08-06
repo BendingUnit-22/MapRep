@@ -11,30 +11,38 @@ import RealmSwift
 import ChameleonFramework
 
 protocol HomeViewControllerDelegate {
-    func didAddWorkout()
+    func reloadWorkoutList()
 }
 
 
 class HomeViewController: UIViewController {
-    //Properties
-    var workouts : Results<Workout>!
-    
+    //MARK: IBOulets
     @IBOutlet weak var tableView: UITableView!
+    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){}
     @IBAction func addWorkout(sender: AnyObject) {
         self.performSegueWithIdentifier("addWorkout", sender: self)
     }
+    //Properties
+    var workouts : Results<Workout>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        didAddWorkout()
+        reloadWorkoutList()
         tableView.delegate = self
         tableView.dataSource = self
+        self.automaticallyAdjustsScrollViewInsets = false
+        self.tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 0, right: 0)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+         self.tableView.reloadData()
+    }
 }
 
 
-// MARK: TableViewController
+/** MARK: TableViewController
+ */
 extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
        let cell =  tableView.dequeueReusableCellWithIdentifier("workoutcell") as! WorkoutSelectionCell
@@ -57,17 +65,17 @@ extension HomeViewController : UITableViewDelegate, UITableViewDataSource{
         return 1
     }
     
-    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let workout = workouts[indexPath.row]
         self.performSegueWithIdentifier("toPreWorkout", sender: workout)
     }
     
 
-    
 }
 
-// MARK: Segue Routing
+
+/** MARK: Segue Routing
+ */
 extension HomeViewController{
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "addWorkout"{
@@ -80,16 +88,14 @@ extension HomeViewController{
             vc.workout = sender as! Workout
         }
     }
-    
-    
-    @IBAction func returnFromSegueActions(sender: UIStoryboardSegue){}
-    
+
 }
 
 
-// MARK: HomeViewControllerDelegate
+/** MARK: HomeViewControllerDelegate
+ */
 extension HomeViewController: HomeViewControllerDelegate{
-    func didAddWorkout() {
+    func reloadWorkoutList() {
         workouts = MPService.sharedInstance.workouts
         self.tableView.reloadData()
     }

@@ -38,7 +38,7 @@ class AddViewController: UITableViewController {
         }catch {
             print("Error Occur!")
         }
-        delegate?.didAddWorkout()
+        delegate?.reloadWorkoutList()
         self.navigationController?.popViewControllerAnimated(true)
     }
     

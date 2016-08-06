@@ -20,8 +20,9 @@ class PreWorkoutCell: UITableViewCell {
     @IBInspectable var completionColor = UIColor.flatPurpleColor()
     @IBOutlet weak var indicatorView: UIView!
     @IBOutlet weak var title: UILabel!
+    
+    var drawArea: CGRect?
     var connector : LineDirect?
-    //var percentCompleted : CGFloat = 0.0
     
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)
@@ -88,8 +89,7 @@ class PreWorkoutCell: UITableViewCell {
         indicatorView.layer.addSublayer(shapeLayer)
         self.drawArea = drawArea
     }
-    
-    var drawArea: CGRect?
+
     
     func fillPercent(percent: CGFloat){
         if percent <= 0.0 && drawArea == nil{

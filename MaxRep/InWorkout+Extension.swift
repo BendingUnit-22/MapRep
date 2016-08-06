@@ -8,7 +8,12 @@
 
 import UIKit
 
-protocol InWorkoutDelegate{
+
+enum WorkoutState{
+    case Ready, InProgress, Resting, Paused, Resumed, Completed
+}
+
+protocol WorkoutDelegate{
     func updateExerciseProgress(ex: Exercise,  status: Status)
     func updateRestProgress(label: String, progress: Double)
     func initLabel(text: String)
@@ -22,3 +27,4 @@ struct Status {
         return CGFloat(cRound)/CGFloat(base)
     }
 }
+

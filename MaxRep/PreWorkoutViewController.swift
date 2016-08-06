@@ -21,20 +21,9 @@ class PreWorkoutViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.alwaysBounceVertical = false
-        let ges = UISwipeGestureRecognizer(target: self, action: #selector(PreWorkoutViewController.swipeDown))
-        ges.direction = .Down
-        self.tableView.addGestureRecognizer(ges)
-    
+        addSwipeDownGesture()
     }
-    
-    func swipeDown() {
-        if navController != nil{
-            confirmQuit()
-        }else{
-            self.performSegueWithIdentifier("segueUnwind", sender: self)
-        }	
-    }
-    
+
     override func viewWillAppear(animated: Bool) {
         if let btn = controlBtn{
             btn.setTitle("Resume", forState: .Normal)
@@ -51,11 +40,9 @@ class PreWorkoutViewController: UIViewController {
 extension PreWorkoutViewController: UITableViewDataSource, UITableViewDelegate{
     
     @IBAction func startWorkout(sender: AnyObject) {
-        
         if navController == nil{
             self.performSegueWithIdentifier("toInWorkout", sender: self)
-            startTimer(workout.workoutDuration())
-            controlBtn = sender as? UIButton
+            startTimerEvent(sender)
         }else{
             inWorkoutController?.timer?.resume()
             self.presentViewController(navController!, animated: true, completion: nil)
@@ -129,47 +116,27 @@ extension PreWorkoutViewController{
             inWorkoutController = wkVC
             wkVC.workout = self.workout
             wkVC.on_completion = {
-                self.workoutCompleted()
+                self.on_WorkoutComplete()
             }
         }
     }
     
-    
-    
-    private func startTimer(duration: Double){
+    private func startTimerEvent(sender: AnyObject?){
+        controlBtn = sender as? UIButton
         headerView?.durationLabel.text = "elapsed"
-        
         let timer = NSTimer.new(every: 1.0) {
             self.headerView?.duration.text = self.globalTime.timeFormat
             self.globalTime += 1.0
         }
         timer.start()
-        
     }
     
-    
-    private func confirmQuit(){
-        let alertController = UIAlertController(title: "Attempt to quit", message: "All your progess will be lost!", preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "Ok", style: .Destructive) { (alert) in
-            self.inWorkoutController?.timer?.stop()
-            self.performSegueWithIdentifier("segueUnwind", sender: self)
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-        alertController.addAction(okAction)
-        alertController.addAction(cancelAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
 
-    
-    private func workoutCompleted(){
-        controlBtn?.setTitle("Finish", forState: .Normal)
-        let alertController = UIAlertController(title: "Finished", message: "", preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "Ok", style: .Destructive) { (alert) in
-        }
-        alertController.addAction(okAction)
-        self.presentViewController(alertController, animated: true, completion: nil)
-    }
 }
+
+
+
+
 
 
 

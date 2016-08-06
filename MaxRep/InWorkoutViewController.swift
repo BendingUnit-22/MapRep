@@ -14,17 +14,16 @@ class InWorkoutViewController: UIViewController {
     
     
     @IBOutlet weak var workoutView: WorkoutView!
-
-    
-    var workout: Workout!
-    var timer : TaskTimer!
-    var on_completion: (() -> Void)?
-    var stats = [String:Status?]()
     
     @IBAction func stop(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
+    var workout: Workout!
+    var timer : TaskTimer!
+    var on_completion: (() -> Void)?
+    var stats = [String:Status?]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         workout.delegate = self
@@ -34,7 +33,6 @@ class InWorkoutViewController: UIViewController {
             initLabel(timer.currTask!.label)
             updateWorkoutView(Double(timer.currTask!.duration), roundL: 0)
         }
-        
         
     }
 
@@ -50,7 +48,7 @@ class InWorkoutViewController: UIViewController {
 
 
 //MARK: InWorkoutDelegate
-extension InWorkoutViewController: InWorkoutDelegate{
+extension InWorkoutViewController: WorkoutDelegate{
     
     func updateRestProgress(label: String, progress: Double) {
         updateWorkoutView(progress, roundL: 0)
